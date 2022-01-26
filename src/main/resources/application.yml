@@ -1,0 +1,30 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: order-service
+#  zipkin:
+#    baseUrl: http://localhost:9411/
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+#TODO implement below host and port, consider how helm deployment env variable be passed to
+#TODO application.yml
+restaurantsvc:
+  host:
+  port:
+  orderverify:
+    uri: order/verify?orderId=zzbb
+
+kitchensvc:
+  host:
+  port:
+  createticket:
+    uri: ticket/create/112233
