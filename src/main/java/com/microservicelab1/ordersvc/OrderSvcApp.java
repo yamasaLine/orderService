@@ -65,11 +65,6 @@ public class OrderSvcApp {
     public ResponseEntity<String> createOrder(final @PathVariable(name = "consumerId") String consumerId) {
         concSessions.incrementAndGet();
         log.info("Received create order request.");
-        try {
-            Thread.sleep(600);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         String res = null;
         try {
             res = String.format("%s:%s:%s", configVal,
